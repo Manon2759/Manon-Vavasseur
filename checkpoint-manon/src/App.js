@@ -5,7 +5,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header name={name} />
+
+
+      <Header name="Les Geeks de l'espace"/>
       <GameList />
 
     </div>
