@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 const Header = (props) => {
 
 const title = props.name
@@ -10,6 +11,7 @@ const title = props.name
 
             <h1>{title}</h1> 
             <h2>Bonjour et Bienvenue parmis nous !</h2>
+            
              
             
         </div>
