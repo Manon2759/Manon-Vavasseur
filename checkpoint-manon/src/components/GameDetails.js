@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios';
+import "./Styles/GameDetails.css"
 
 
 
 const GameDetails = () => {
-    
-    const {id} = useParams()
-    const [unicGame, setUnicgame]= useState({})
+
+    const { id } = useParams()
+    const [simpleGame, setSimpleGame] = useState({})
 
     useEffect(() => {
         axios.get(`https://apis.wilders.dev/wild-games/games/${id}`)
-            .then(response => setUnicgame(response.data))
+            .then(response => setSimpleGame(response.data))
             .catch(error => console.log(error))
     }, [id])
 
     return (
         <div>
-            <h3>{unicGame.name}</h3>
-            <p>{unicGame.rating}</p>
-            <img src={unicGame.background_image} alt="img" />
-            <Link to="/" > Retour </Link>
+            <div className='details__game'>
+                <h3 className='title__details__game'>{simpleGame.name}</h3>
+                <img className='img__details__game' src={simpleGame.background_image} alt="img" />
+                <p>☆ {simpleGame.rating} / {simpleGame.released}</p>
+                <div className='link__details__game'>
+                <NavLink to="/"> Retour </NavLink>
+                </div>
+            </div>
         </div>
     );
 };

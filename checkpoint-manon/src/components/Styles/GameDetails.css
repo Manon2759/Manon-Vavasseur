@@ -1,0 +1,30 @@
+.details__game {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.img__details__game {
+    width: 30%;
+    border-radius: 10%;
+}
+
+.link__details__game {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: auto;
+    width: 110px;
+}
+
+.link__details__game a {
+    text-decoration: none;
+    color: white;
+}
+
+.link__details__game a:hover {
+    color: goldenrod;
+}
+
+.title__details__game {
+    font-size: 50px;
+}

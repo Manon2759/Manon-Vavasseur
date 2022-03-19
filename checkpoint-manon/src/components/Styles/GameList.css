@@ -1,0 +1,21 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.btn__filter {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 5% 0;
+   
+}
+.btn__filter__text {
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 6px;
+}
+.btn__filter__text:hover {
+     color: goldenrod;
+}

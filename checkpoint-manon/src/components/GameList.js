@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Game from './Game';
+import "./Styles/GameList.css"
+import Header from './Header';
 
 const GameList = () => {
     const [listgame, setListgame] = useState([])
@@ -27,16 +29,21 @@ const GameList = () => {
     return (
 
         <div>
+<Header name="Salut les Geeks IN Black" />
+            <div className='btn__filter'> 
+            <button className='btn__filter__text' onClick={click}>{filtre ? "Tous les jeux" : "Les jeux les mieux notés"}</button></div>
 
-            <div> <button onClick={click}>{filtre ? "Tous les jeux" : "Les meilleurs jeux"}</button></div>
-            {listgame
-                .filter((game) => {
-                    return !filtre || game.rating >= 4.5
-                })
-                .map((game, id) => {
-                    return <Game key={id} name={game.name} id={game.id} images={game.background_image} rating={game.rating} onDelete={deleteId} />
-                })
-            }
+            <div className='cards'>
+                {listgame
+                    .filter((game) => {
+                        return !filtre || game.rating >= 4.5
+                    })
+                    .map((game, id) => {
+                        return <Game key={id} name={game.name} id={game.id} images={game.background_image} rating={game.rating} onDelete={deleteId} />
+                    })
+                }
+
+            </div>
 
         </div>
     );

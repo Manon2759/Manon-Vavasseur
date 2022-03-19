@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header name="Les Geeks de l'espace" />
         <Routes>
           <Route path="/" element={<GameList />}> </Route>
           <Route path="/games/:id" element={<GameDetails />}></Route>
